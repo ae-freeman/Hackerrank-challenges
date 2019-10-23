@@ -8,10 +8,10 @@ for i in range(int(n)):
 
 
 
-for j in range(int(n)):
-    name = str(input())
+lines = sys.stdin.readlines()
+for i in lines:
+    name = i.strip()
     if name in phoneBook:
-        phone = phoneBook[name]
-        print(name + "=" + str(phone))
+        print(name + '=' + str( phoneBook[name] ))
     else:
-        print("Not found")
+        print('Not found')
