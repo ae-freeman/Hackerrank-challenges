@@ -19,14 +19,15 @@ class Solution:
 
     def levelOrder(self,root):
         #Write your code here
+        #if there is a root node:
         if root:
-            queue = [root]
-            while queue:
-                node = queue.pop()
-                print(node.data, end=" ")
-                if node.left:
+            queue = [root] #add that root to the queue to traverse
+            while queue: #while there is at least one piece of data in queue
+                node = queue.pop() #take off the first piece of data and traverse it
+                print(node.data, end=" ") #print that node out
+                if node.left: #if it has a left child, add that to the queue
                     queue.insert(0, node.left)
-                if node.right:
+                if node.right: #if it has a right child, add that to the queue
                     queue.insert(0, node.right)
 
 
