@@ -67,3 +67,19 @@ class Solution:
             return True
         else:
             return False
+
+
+###### MORE CONCISE Solution
+class Solution:
+    def isValid(self, s: str) -> bool:
+        stack = []
+        mapping = {"(":")","{":"}","[":"]"}
+        for char in s:
+            if char in mapping:
+                stack.append(char)
+            elif stack:
+                if mapping[stack.pop()] != char:
+                    return False
+            else:
+                return False
+        return len(stack) == 0
